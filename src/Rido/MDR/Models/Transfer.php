@@ -32,8 +32,10 @@ class Transfer extends Model
             'domein' => $this->domein,
             'tld'    => $this->tld,
         ]);
-
-        return $result['items'];
+        
+        if( $result['transfercount'] > 0 ) {
+            return $result['items'];
+        }
     }
 
     /**
